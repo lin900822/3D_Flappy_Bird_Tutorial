@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc74239358439af43a64ce201397c5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 641336858}
   moveSpeed: -5
   zBound: -60
   zOffset: 120
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfe79523d0913048b5aba161cb1bdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 641336858}
   tubePrefab: {fileID: 8717101979270262482, guid: 8e2cc9782ab4e504e8c3552f83f4fd4f,
     type: 3}
   spawnMaxY: 18
@@ -274,6 +276,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &641336857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641336859}
+  - component: {fileID: 641336858}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &641336858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641336857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfa2d98741ce1b4bb7e611492695fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: 0
+  IsGameOver: 0
+--- !u!4 &641336859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641336857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.501717, y: 17.629974, z: 7.9413652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1147335577
 PrefabInstance:
@@ -391,8 +439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c6c866a06c6b348a2f2c97c21b3846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 641336858}
   birdRigidbody: {fileID: 1162505315}
   birdAnimator: {fileID: 1162505319}
+  crashSmoke: {fileID: 5771719359201917378, guid: ca2c0571cbc1b954abdf8dc327791c91,
+    type: 3}
   jumpForce: 12
 --- !u!95 &1162505319
 Animator:
@@ -688,6 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc74239358439af43a64ce201397c5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 641336858}
   moveSpeed: -5
   zBound: -60
   zOffset: 120

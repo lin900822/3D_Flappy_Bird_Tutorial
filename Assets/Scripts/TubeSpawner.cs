@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TubeSpawner : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private Tube tubePrefab;
 
     [SerializeField] private float spawnMaxY;
@@ -15,6 +17,8 @@ public class TubeSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (gameManager.IsGameOver) return;
+
         timer += Time.deltaTime;
 
         if(timer >= spawnTime)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private float moveSpeed;
 
     [SerializeField] private float zBound;
@@ -11,6 +13,8 @@ public class Floor : MonoBehaviour
 
     private void Update()
     {
+        if (gameManager.IsGameOver) return;
+
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
         if(transform.position.z <= zBound)
