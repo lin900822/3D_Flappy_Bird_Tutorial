@@ -10,6 +10,11 @@ public class Bird : MonoBehaviour
 
     [SerializeField] private Animator birdAnimator;
 
+    [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private AudioClip addSound;
+    [SerializeField] private AudioClip crashSound;
+
     [SerializeField] private GameObject crashSmoke;
 
     [SerializeField] private float jumpForce;
@@ -40,12 +45,15 @@ public class Bird : MonoBehaviour
         if (other.CompareTag("Tube"))
         {
             gameManager.AddScore();
+            audioSource.PlayOneShot(addSound);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         gameManager.SetGameOver();
+
+        audioSource.PlayOneShot(crashSound);
 
         Instantiate(crashSmoke, transform.position, Quaternion.identity);
 
